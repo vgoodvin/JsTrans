@@ -10,17 +10,23 @@ Installation
 -----------
 * Download/clone JsTrans in extension folder (folder should be 'JsTrans') 
 * Import the extension in main config: ('ext.JsTrans.*')
+* Configure component:
 
+    'jstrans' => array(
+        'class' => 'common.extensions.JsTrans.JsTrans',
+        'categories' => array('cat1', 'cat2'),
+        'languages' => array('ru', 'de', 'es'),
+        'defaultLanguage' => 'en', // Optional
+    )
 
 Usage
 -----------
 We need to publish the translations to javascript for them to work. You can publish all your translations in a single
 location, or publish only parts in specific places. (e.g. controller or view)
 
-     new JsTrans('app','nl');
+     Yii::app()->jstrans->init();
 
-The first parameter is the category, the second the language. Both accept single items as string or multiple as array.
-There is an optional third parameter to specify the default language. If nothing is passed, it will use the App default language.
+Also you can declare your jstrans-component in the 'preload' directive.
 
 If everything went well, the translations are published as a javascript file containing all the translations in JSON format.
 A hash is included in the filename, to distinguish between different languages/categories. By default the file is cached, you
@@ -108,6 +114,6 @@ This is a known limitation of the framework.
 
 Resources
 -----------
-* extension page: http://www.yiiframework.com/extension/jstrans/
-* github project: https://github.com/Arne-S/JsTrans
+* Original extension page: http://www.yiiframework.com/extension/jstrans/
+* Original github project: https://github.com/Arne-S/JsTrans
 
