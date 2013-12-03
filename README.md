@@ -10,7 +10,9 @@ Installation
 -----------
 * Download/clone JsTrans in extension folder (folder should be 'JsTrans') 
 * Import the extension in main config: ('ext.JsTrans.*')
-* Configure component:
+* Configure component
+
+Example:
 
     'jstrans' => array(
         'class' => 'common.extensions.JsTrans.JsTrans',
